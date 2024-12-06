@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "rsa",
+      "type": "pt.isec.pd.spring_boot.exemplo3.security.RsaKeysProperties",
+      "sourceType": "pt.isec.pd.spring_boot.exemplo3.security.RsaKeysProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rsa.private-key",
+      "type": "java.security.interfaces.RSAPrivateKey",
+      "sourceType": "pt.isec.pd.spring_boot.exemplo3.security.RsaKeysProperties"
+    },
+    {
+      "name": "rsa.public-key",
+      "type": "java.security.interfaces.RSAPublicKey",
+      "sourceType": "pt.isec.pd.spring_boot.exemplo3.security.RsaKeysProperties"
+    }
+  ],
+  "hints": []
+}
