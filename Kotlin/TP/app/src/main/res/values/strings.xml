@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TpApoio</string>
+    <string name="WelcomeTitle">Monumentos de Portugal</string>
+    <string name="NavTitle">Monumentos de Portugal</string>
+    <string name="Login">Entrar</string>
+    <string name="Register">Registar</string>
+    <string name="Locations">Locais</string>
+    <string name="Categories">Categorias</string>
+    <string name="NameC">Nome Completo</string>
+    <string name="PointsofInterest">Locais de Interesse</string>
+    <string name="Credits">Creditos</string>
+    <string name="AddLocation">Adicionar nova Localização</string>
+    <string name="AddInterestLocation">Adicionar novo local de interesse</string>
+    <string name="AddCategory">Adicionar nova categoria</string>
+    <string name="AddClassification">Adicionar nova classificação</string>
+    <string name="Add">Adicionar</string>
+    <string name="Image">Imagem</string>
+    <string name="CategoryName">Nome da Categoria</string>
+    <string name="CategoryDescription">Descrição da Categoria</string>
+    <string name="Description">Descrição</string>
+    <string name="latitude" translatable="false">Latitude</string>
+    <string name="longitude" translatable="false">Longitude</string>
+    <string name="LocationTitle">Titulo Localização</string>
+    <string name="LocationDescription">Descriçao Localização</string>
+    <string name="SearchCategory">Pesquisar Categoria</string>
+    <string name="Name">Nome</string>
+    <string name="SearchPOI">Pesquisar Locais de Interesse</string>
+    <string name="AtualLocation">Localização Atual</string>
+    <string name="SearchLocation">Pesquisar Local</string>
+    <string name="SearchName">Procurar Nome</string>
+</resources>

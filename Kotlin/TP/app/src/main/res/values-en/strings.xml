@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TpApoio</string>
+    <string name="WelcomeTitle">Portugal Monuments</string>
+    <string name="NavTitle">Portugal Monuments</string>
+    <string name="Login">Login</string>
+    <string name="Register">Register</string>
+    <string name="Locations">Locations</string>
+    <string name="Categories">Categories</string>
+    <string name="NameC">Full Name</string>
+    <string name="PointsofInterest">Points of Interest</string>
+    <string name="Credits">Credits</string>
+    <string name="AddLocation">Add new Location</string>
+    <string name="AddInterestLocation">Add new interest local</string>
+    <string name="AddCategory">Add new category</string>
+    <string name="AddClassification">Add new classification</string>
+    <string name="Add">Add</string>
+    <string name="Image">Image</string>
+    <string name="CategoryName">Category Name</string>
+    <string name="CategoryDescription">Category Description</string>
+    <string name="Description">Description</string>
+    <string name="LocationTitle">Location Title</string>
+    <string name="LocationDescription">Location Description</string>
+    <string name="SearchCategory">Search Category</string>
+    <string name="Name">Name</string>
+    <string name="SearchPOI">Search Points of Interest</string>
+    <string name="SearchLocation">Search Location</string>
+    <string name="SearchName">Search Name</string>
+    <string name="AtualLocation">Atual Location</string>
+</resources>
