@@ -1,0 +1,14 @@
+all: jogoUI motor bot
+
+jogoUI: jogoUI.c
+	gcc -o jogoUI jogoUI.c -pthread -lncurses
+
+motor: motor.c
+	gcc -o motor motor.c -pthread
+
+bot: bot.c
+	gcc -o bot bot.c
+
+
+clean:
+	rm -f jogoUI motor bot
