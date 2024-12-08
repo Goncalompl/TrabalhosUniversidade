@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TrabalhoFinalRentCar.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
+{
+
+
+    <a class="#" style="color: #FFFFFF;font-size: 14px;font-family:'Playfair Display';margin-left: 15px; margin-right: 15px;" asp-area="" asp-controller="User" asp-action="Clients">Clients</a>
+    <a class="#" style="color: #FFFFFF;font-size: 14px;font-family:'Playfair Display';margin-left: 15px"asp-area="" asp-controller="User" asp-action="Owners">Owners</a>
+    
+    
+}
+
+
+

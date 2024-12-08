@@ -1,0 +1,115 @@
+﻿@model IEnumerable<TrabalhoFinalRentCar.Models.Veiculo>
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Veiculos Disponiveis</h1>
+
+
+
+
+<div class="container mb-3 mt-3">
+
+
+
+    <div class="row">
+        <div class="col-10">
+
+            <div class="col-6">
+                <a asp-action="Index" asp-controller="Veiculos">Todos</a>
+
+
+            </div>
+
+            <div class="col-6">
+
+                <a asp-action="Index" asp-route-preco="1">Preco+</a>
+
+            </div>
+
+            <div class="col-6">
+
+                <a asp-action="Index" asp-route-preco="2">Preco-</a>
+
+            </div>
+
+            <div class="col-6">
+                <a asp-action="Index" asp-route-preco="3">Empresas Review</a>
+            </div>
+
+            <label for="cars">Empresa:</label>
+
+
+
+
+
+
+
+
+
+
+
+
+            <form method="post">
+                Localização/Tipo
+                <input type="text" id="TextoAPesquisar" name="TextoAPesquisar">
+
+
+
+                <input type="submit" value="Pesquisar" />
+
+
+            </form>
+
+            <form method="post">
+                Data Levantamento
+                <input type="datetime-local" id="DataLevantamento" name="DataLevantamento">
+
+
+
+                <input type="submit" value="Pesquisar" />
+                Data Entrega
+                <input type="datetime-local" id="DataEntrega" name="DateEntrega">
+
+
+
+                <input type="submit" value="Pesquisar" />
+
+
+            </form>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <div class="row pad">
+        <hr />
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+
+                <div class="text-black">
+                </div>
+                <div class="Text">
+                    <h5 style="float">Marca: @item.Marca</h5>
+                    <h5 style="float">Custo: @item.Custo</h5>
+                    <h5 style="float">Empresa: @item.EmpresaAssociada.Nome</h5>
+                    <h5 style="float">Review da Empresa: @item.EmpresaAssociada.Review.Nota</h5>
+
+                </div>
+
+            </div>
+        }
+
+
+
+    </div>
+</div>

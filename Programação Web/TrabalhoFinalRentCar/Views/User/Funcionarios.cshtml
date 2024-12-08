@@ -1,0 +1,174 @@
+﻿@model IEnumerable<TrabalhoFinalRentCar.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Funcionario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="container mt-3 mb-3">
+        <div class="bar" style="clear:both">
+            <h2>My Employees</h2>
+            <a asp-action="CriarFuncionario">Create New</a>
+        </div>
+        <div class="table" style="padding:5rem;">
+            <table id="searchTable" class="table table-bordered table-hover table-sm">
+                <thead>
+                    <tr>
+                        <th style="vertical-align:middle">
+                            Id
+                        </th>
+                        <th style="vertical-align:middle">
+                            Name
+                        </th>
+                        <th style="vertical-align:middle">
+                            Role
+                        </th>
+                        <th style="vertical-align:middle">
+                            Username
+                        </th>
+                        <th style="vertical-align:middle">
+                            Email
+                        </th>
+                        <th style="vertical-align:middle">
+                            Email Confirmed
+                        </th>
+                        <th style="vertical-align:middle">
+                            Phone Number
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrimeiroNome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UltimoNome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<style>
+
+    .bar h2 {
+        padding-top: 1em;
+        padding-bottom: 10px;
+        font-family: 'Playfair Display';
+        display:inline-block;
+    }
+
+      .bar a{
+        float:right;
+        padding-top: 3em;
+        padding-bottom: 10px;
+        font-family: 'Playfair Display';
+        color:rgb(33,33,39);
+        font-weight:bolder;
+    }
+
+    .table {
+        background: #fff;
+        overflow-y: auto;
+        box-shadow: 0px 10px 50px 0px rgba(0,0,0,0.5);
+        border-radius: 5px;
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+        table thead th,
+        table tbody td {
+            padding: 15px;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        table thead th {
+            vertical-align: middle;
+            background: rgb(33,33,39);
+            background: linear-gradient(90deg, rgba(33,33,39,1) 0%, rgba(33,33,39,1) 100%, rgba(33,33,39,1) 100%);
+            color: white;
+            font-size: 16px;
+            position: sticky;
+            top: -1%;
+            font-family: 'Playfair Display';
+        }
+
+
+        table tbody td {
+            border-bottom: 1px solid rgba(0,0,0,0.1)
+        }
+
+    .page-item.active .page-link {
+        color: #fff !important;
+        background-color: #000 !important;
+        border-color: #000 !important;
+    }
+
+    .page-link {
+        color: #000 !important;
+        background-color: #fff !important;
+        border: 1px solid #dee2e6 !important;
+    }
+
+        .page-link:hover {
+            color: #fff !important;
+            background-color: #000 !important;
+            border-color: #000 !important;
+        }
+</style>
+
+
+@section Scripts{
+
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+    <script>
+        $(document).ready(function () {
+
+            $('#searchTable').DataTable({
+
+                "scrollY": "450px",
+                "scrollCollapse": true,
+                "paging": true,
+                "ordering": false
+
+            });
+
+        });
+
+
+    </script>
+}

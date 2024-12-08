@@ -1,0 +1,77 @@
+﻿
+@using Microsoft.AspNetCore.Identity
+@using TrabalhoFinalRentCar.Models
+@model TrabalhoFinalRentCar.Models.ApplicationUser
+
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Details";
+
+}
+
+@{
+    ViewData["Title"] = "Details";
+
+}
+
+
+
+<div class="container mt-3 mb-3">
+    <h4>Personal Data</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PrimeiroNome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrimeiroNome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UltimoNome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UltimoNome)
+        </dd>
+        <dt class="col-sm-2">
+            Username
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            Phone Number
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+
+        </dd>
+    </dl>
+    @if (User.IsInRole("Client") && User.Identity.IsAuthenticated)
+    {
+        <div>
+            <a class="btn btn-dark btn-lg" asp-action="Edit" asp-route-id="@Model.Id">Edit </a>
+        </div>
+    }
+
+</div>
+
+<style>
+    div h4 {
+        padding-top: 1em;
+        padding-bottom: 10px;
+        font-family:'Playfair Display'
+    }
+
+    .detalhes {
+        padding-top: 2em;
+    }
+</style>

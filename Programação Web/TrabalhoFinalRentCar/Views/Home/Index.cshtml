@@ -1,0 +1,124 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    #home {
+        background: url(/img/modern.jpg) no-repeat center center fixed;
+        display: table;
+        height: 100%;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .landing-text {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+        .landing-text h1 {
+            font-family: 'Playfair Display';
+            font-size: 400%;
+            font-weight: 700;
+            color: #1d1d21;
+        }
+
+        .landing-text h3 {
+            font-family: 'Playfair Display';
+            color: #1d1d21;
+            padding-bottom: 16px;
+        }
+
+        .landing-text a {
+            font-family: 'Playfair Display';
+            color: whitesmoke;
+        }
+
+    .padding {
+        padding: 80px 0;
+    }
+
+        .padding img {
+            width: 100%;
+        }
+
+    #fixed {
+        background: url(../../wwwroot/img/principal.jpg) no-repeat center center fixed;
+        display: table;
+        height: 60%;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .card {
+        margin-bottom: 10px;
+        padding: 8px 8px 8px 8px;
+        height: 50%;
+        width: 50%;
+    }
+
+        .card img {
+            height: 100%;
+            width: 100%;
+        }
+
+    .margin-cards {
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+
+</style>
+<div id="home">
+    <div class="landing-text">
+        <h1>RENTAL4YOU</h1>
+        <h3>Procuras um veículo?</h3>
+        <a class="btn btn-dark btn-lg" asp-area="" asp-controller="Home" asp-action="Catalogo">Vamos procurar um</a>
+    </div>
+</div>
+
+<div class="padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="~/img/sobrenos.jpg" style="border-radius:8px" />
+            </div>
+            <div class="col-sm-6 text-center">
+                <h2 style="font-family:'Montserrat'; font-weight:300; color: #1d1d21;">Sobre nós</h2>
+                <p class="lead" style="font-family:'Montserrat'; font-weight:300; color: #1d1d21;">
+                    Rental4You é uma empresa líder no aluguer de carros.
+                    A empresa conta com mais de 20 anos de experiência, 500 funcionários focados no atendimento de qualidade, rápido e transparente.
+                    Trabalhamos com diversas empresas que disponibilizam os seus carros para aluguer.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <img src="~/img/carrolimpo.jpg" class="img-fluid" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4 style="font-family:'Montserrat'">Carros limpos. Reservas flexíveis. Balcões de aluguer que cumprem a distância social.</h4>
+                <p style="font-family:'Montserrat'">Estamos a trabalhar com os nossos parceiros para lhe dar a segurança que precisa no seu aluguer.</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <img src="~/img/money.jpg" class="img-fluid" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4 style="font-family:'Montserrat'">Sem taxas ocultas</h4>
+                <p style="font-family:'Montserrat'">Saiba exatamente o que está a pagar</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="fixed">
+</div>
+

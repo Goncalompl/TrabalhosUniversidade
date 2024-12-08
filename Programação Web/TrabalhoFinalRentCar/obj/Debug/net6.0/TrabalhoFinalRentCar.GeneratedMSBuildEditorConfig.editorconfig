@@ -1,0 +1,160 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TrabalhoFinalRentCar
+build_property.RootNamespace = TrabalhoFinalRentCar
+build_property.ProjectDir = C:\Users\gonca\OneDrive\Área de Trabalho\Trabalhos uni\Programação WEB\TrabalhoFinalRentCar\TrabalhoFinalRentCar\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\gonca\OneDrive\Área de Trabalho\Trabalhos uni\Programação WEB\TrabalhoFinalRentCar\TrabalhoFinalRentCar
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Empresas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Empresas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Empresas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Empresas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Empresas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Reviews/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Reviews/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Reviews/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Reviews/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Reviews/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/FuncionarioPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZ1bmNpb25hcmlvUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/_AdminPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/_ClientPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DbGllbnRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/_ManagerPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYW5hZ2VyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/User/Clientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDbGllbnRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/User/CriarFuncionario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmlhckZ1bmNpb25hcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/User/Funcionarios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGdW5jaW9uYXJpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/User/Gestores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXN0b3Jlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Veiculos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Veiculos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Veiculos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Veiculos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Veiculos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Veiculos/IndexFuncionario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVpY3Vsb3NcSW5kZXhGdW5jaW9uYXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gonca/OneDrive/Área de Trabalho/Trabalhos uni/Programação WEB/TrabalhoFinalRentCar/TrabalhoFinalRentCar/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-qkxz9jb54z
