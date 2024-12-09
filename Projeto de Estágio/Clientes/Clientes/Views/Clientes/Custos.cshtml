@@ -1,0 +1,147 @@
+﻿@model IEnumerable<Clientes.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Contratos de Clientes";
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml";
+}
+
+<h1>Contratos de Clientes</h1>
+
+<form method="post">
+
+    <input type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Cliente">
+
+
+
+    <input class="btn btn-sm  my-2 my-sm-0" style="background-color:royalblue; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+    <input type="text" id="nr" name="nr" placeholder="Valor do contrato">
+
+
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:royalblue; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+    <button id="btnGroupDrop1" type="button" class="btn  btn-sm dropdown-toggle show" style="background-color:royalblue; color:aliceblue" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+    <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" data-popper-placement="bottom-start">
+        <a asp-controller="Clientes" asp-action="Custos" asp-route-Lista="1"> ALista </a>
+        <div class=""></div>
+        <a asp-controller="Clientes" asp-action="Custos" asp-route-Lista="2" style="  background-color:royalblue; color:aliceblue"> AListaDigital </a>
+        <div class=""></div>
+        <a asp-controller="Clientes" asp-action="Custos" asp-route-Lista="3" style="  background-color:royalblue; color:aliceblue"> Ambos </a>
+    </div>
+
+
+ 
+</form>
+
+
+
+<table class="table table-hover"> 
+    <thead>
+        <tr class="table" style="background-color:royalblue; color:aliceblue">
+
+            <th scope="row">
+                <img src="~/img/id-card.png" width="40" height="20" />Cliente
+                <a asp-action="Custos" asp-route-Nome="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Custos" asp-route-Nome="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+
+            </th>
+            <th scope="row">
+
+                <img src="~/img/save-money.png" width="40" height="20" />Valor do Contrato
+                <a asp-action="Custos" asp-route-Custo="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Custos" asp-route-Custo="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+
+            </th>
+            <th scope="row">
+
+                <img src="~/img/agenda.png" width="40" height="20" />Data de Adesão
+                <a asp-action="Custos" asp-route-Adesao="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Custos" asp-route-Adesao="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th scope="row">
+
+                <img src="~/img/agenda.png" width="40" height="18" />Data de Fim
+                <a asp-action="Custos" asp-route-Fim="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Custos" asp-route-Fim="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th></th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table" style="background-color:aliceblue; color:royalblue">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Custo) €
+                </td>
+                
+                    @if (item.DataAdesao == null)
+                    {
+                    <td>
+                        -----------------
+                    </td>
+
+                    }
+                    else
+                    {
+                    <td>
+                            @Html.DisplayFor(modelItem => item.DataAdesao.Value.Day)/@Html.DisplayFor(modelItem => item.DataAdesao.Value.Month)/@Html.DisplayFor(modelItem => item.DataAdesao.Value.Year)
+                    </td>
+                    }
+                
+                
+                    @if(item.DataFim == null){
+                        <td>
+                            -----------------
+                        </td>
+               
+                    }
+                    else {
+                        <td>
+                        @Html.DisplayFor(modelItem => item.DataFim.Value.Day)/@Html.DisplayFor(modelItem => item.DataFim.Value.Month)/@Html.DisplayFor(modelItem => item.DataFim.Value.Year)
+                        </td>
+                    }
+                
+                <td>
+
+                    <a asp-controller="PdfFiles" asp-action="Details" asp-route-TextoAPesquisar="@item.Nome" class="btn btn-sm btn my-2 my-sm-0" style="background-color:royalblue; color:aliceblue"> <img src="~/img/contract_white.png" width="30px" height="30px"></a>
+
+                </td>
+
+            </tr>             
+        }
+    </tbody>
+</table>
+
+
+
+<style>
+
+    form {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+    h1 {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: 'Playfair Display';
+    }
+
+    tr {
+        border: 1px solid;
+        width: 50%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+</style>

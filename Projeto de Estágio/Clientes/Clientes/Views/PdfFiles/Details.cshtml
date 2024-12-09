@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Clientes.Models.PdfFiles>
+
+@{
+    ViewData["Title"] = "Lista Contratos";
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml";
+}
+
+
+
+
+
+<h1 class="pb-2 border-bottom">
+    <span class="badge rounded-pill" style="background-color:royalblue; color:aliceblue">Lista de Contratos</span>
+
+    <a asp-action="Index" class="btn btn-sm" style="color:royalblue; background-color:white"> Adicionar Contrato </a>
+
+</h1>
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-6 col-md-5 col-lg-4">
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Cliente">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-lg" type="submit" style="background-color:royalblue; color:aliceblue">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table" style="background-color:royalblue; color:aliceblue">
+            <th>
+                 Cliente
+                <a asp-action="Details" asp-route-Cliente="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↑ </a>
+
+                <a asp-action="Details" asp-route-Cliente="2" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↓ </a>
+            </th>
+            <th>
+                Nome
+                <a asp-action="Details" asp-route-Nome="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↑ </a>
+
+                <a asp-action="Details" asp-route-Nome="2" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↓ </a>
+            </th>
+            <th>
+
+            </th>
+             <th>
+
+            </th>
+           
+          
+        
+           
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table" style="background-color:aliceblue; color:royalblue">
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientePdf.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+             
+             
+                <td>
+                    <a href="../PdfFiles/PDFViewerNewTab?fileName=@item.Path" target="_blank"><img src="~/img/pdf.png" width="40" height="40" /></a>
+                    <a asp-action="Edit" asp-route-id="@item.FileId" class="btn btn-sm btn-outline-success"> ✎ </a>
+                    <a asp-action="Delete" asp-route-id="@item.FileId" class="btn btn-sm btn-outline-danger"> X </a>
+                </td>
+
+             
+            </tr>
+        }
+    </tbody>
+</table>

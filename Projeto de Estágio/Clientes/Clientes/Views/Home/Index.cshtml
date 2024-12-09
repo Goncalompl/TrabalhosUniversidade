@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Clientes.Models.Agendamento>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+
+
+
+<div class="container px-4 py-5" id="featured-3" style=" background-color:aliceblue">
+    <h1 class="pb-2 border-bottom" >Destaques</h1>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-5" >
+        <div class="feature col">
+            <h1 class="fs-2">Clientes <img src="~/img/cliente (2).png" width="60" height="40" /></a></h1>
+            
+            <div class="btn-group-vertical" >
+                <a asp-controller="Clientes" asp-action="ListaClientes" class="btn btn-outline-primary  btn-sm" style="margin:5px;color:black;font-family:'Times New Roman'; font-size:medium"> Todos </a>
+                <a asp-controller="Clientes" asp-action="ListaContactos" class="btn btn-outline-primary btn-sm" style=" margin:5px ;color:black;font-family:'Times New Roman'; font-size:medium"> Contactos </a>
+                <a asp-controller="Clientes" asp-action="Custos" class="btn btn-outline-primary btn-sm" style="margin:5px ; color:black;font-family:'Times New Roman'; font-size:medium"> Contratos </a>
+                <a asp-controller="PdfFiles" asp-action="Details" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> PDFs </a>
+               
+               
+                    
+               
+                    
+               
+            </div>
+        </div>
+        <div class="feature col">
+            <h1 class="fs-4">Agendamentos <img src="~/img/agenda (2).png" width="60" height="40" /></a></h1>
+            
+            <div class="btn-group-vertical">
+                <a asp-controller="Agendamentos" asp-action="ListaAgendamentos" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black;font-family:'Times New Roman'; font-size:medium"> Todos</a>
+                <a asp-controller="Agendamentos" asp-action="ListaAgendamentos" asp-route-Recente="1" class="btn btn-danger btn-sm" style="margin:5px ;color:aliceblue;font-family:'Times New Roman'; font-size:medium"> Nos próximos 5 dias </a>
+                <a asp-controller="Agendamentos" asp-action="Historico" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Histórico </a>
+
+
+            </div>
+        </div>
+        <div class="feature col">
+            <h1 class="fs-2">Leads <img src="~/img/checklist.png" width="60" height="40" /></a></h1>
+            
+            <div class="btn-group-vertical">
+                <a asp-controller="Leads" asp-action="Index" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Todas</a>
+                <a asp-controller="Leads" asp-action="Index" asp-route-Quente="1" class="btn btn-danger btn-sm" style="margin:5px ;color:aliceblue; font-family:'Times New Roman'; font-size:medium"> Quente</a>
+                <a asp-controller="Leads" asp-action="Index" asp-route-Quente="2" class="btn btn-primary btn-sm" style="margin:5px ;color:aliceblue; font-family:'Times New Roman'; font-size:medium"> Frio</a>                
+                <a asp-controller="Leads" asp-action="LeadsConcluidas" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Leads Concluídas</a>
+                <a asp-controller="Leads" asp-action="ClientesLeadsCards" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Contactos Leads</a>
+            </div>
+        </div>
+        <div class="feature col">
+            <h1 class="fs-4">Campanhas <img src="~/img/bullhorn (3).png" width="60" height="40" /></a></h1>
+           
+            <div class="btn-group-vertical">
+                <a asp-controller="Campanhas" asp-action="ListaCampanhas" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Todas </a>
+                <a asp-controller="Campanhas" asp-action="ListaCampanhas" asp-route-Ativa="1" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Ativas </a>
+                <a asp-controller="Campanhas" asp-action="ListaCampanhas" asp-route-Ativa="2" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Desativas </a>
+
+            </div>
+        </div>
+
+        <div class="feature col">
+            <h1 class="fs-2">Notas <img src="~/img/notas.png" width="60" height="40" /></a></h1>
+           
+            <div class="btn-group-vertical">
+                <a asp-controller="Notas" asp-action="Index" class="btn btn-outline-primary btn-sm" style="margin:5px ;color:black; font-family:'Times New Roman'; font-size:medium"> Todas </a>
+                
+            </div>
+        </div>
+    </div>  
+</div>
+
+<div class="px-4 py-5 bg-opacity-80 my-5 " style=" background-color:aliceblue">
+    <h1 class="pb-2 border-bottom">Adicionar</h1>
+    <h3 class="display-5 fw-bold text-center">Novo/a <img src="~/img/plus.png" width="60" height="40" /></a></h3>
+    <div class="col-lg-6 mx-auto">
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">         
+            <a asp-controller="Clientes" asp-action="Create" type="button" class="btn  btn-sm px-4 gap-3 rounded-pill" style="margin:3px; background-color:royalblue; color:aliceblue"> Cliente  </a>
+            <a asp-controller="Agendamentos" asp-action="Create" type="button" class="btn  btn-sm px-4 gap-3 rounded-pill" style="margin:3px;background-color:darkorange; color:aliceblue"> Agendamento </a>
+            <a asp-controller="Leads" asp-action="Create" type="button" class="btn  btn-sm px-4 gap-3 rounded-pill" style="margin:3px; background-color:mediumseagreen; color:aliceblue"> Lead </a>
+            <a asp-controller="Campanhas" asp-action="Create" type="button" class="btn btn-sm px-4 gap-3 rounded-pill" style="margin:3px;  background-color:mediumpurple; color:aliceblue"> Campanha </a>
+            <a asp-controller="Notas" asp-action="Create" type="button" class="btn btn-sm px-4 gap-3 rounded-pill" style="margin:3px;  background-color:#FFFF33; color:darkslategrey"> Nota </a>
+
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        /* Safari 4-5, Chrome 1-9 */
+        background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffff66), to(#2F2727));
+        /* Safari 5.1+, Chrome 10+ */
+        background: -webkit-radial-gradient(circle, white, #58B0F3);
+        /* Firefox 3.6+ */
+        background: -moz-radial-gradient(circle, #ffff66, white);
+        /* IE 10 */
+        background: -ms-radial-gradient(circle, #ffff66, white);
+        height: 600px;
+    }
+
+    .centered-form {
+        margin-top: 60px;
+    }
+
+        .centered-form .panel {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+        }
+
+    .label-floatlabel {
+        font-weight: bold;
+        color: #46b8da;
+        font-size: 11px;
+    }
+
+
+</style>

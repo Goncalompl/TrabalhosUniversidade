@@ -1,0 +1,128 @@
+﻿@model Clientes.Models.Campanha
+
+@{
+    ViewData["Title"] = "Nova Campanha";
+    Layout = "~/Views/Shared/_LayoutCampanhas.cshtml";
+}
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <script type="text/javascript" src="http://www.clubdesign.at/floatlabels.js"></script>
+
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default" style="block-size:auto; padding-top:0px">
+                    <div class="panel-heading" style="background-color:mediumpurple">
+                        <h3 class="panel-title" style="color:aliceblue">Nova Campanha</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group" style="visibility:hidden">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input asp-for="Plataforma" class="form-control" style="background-color:white" />
+                                    <label for="floatingInput" style="color:grey">Plataforma</label>
+                                    <span asp-validation-for="Plataforma" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <input asp-for="Data" class="form-control" />
+                                <span asp-validation-for="Data" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input asp-for="Investimento" class="form-control" style="background-color:white" />
+                                    <label for="floatingInput" style="color:grey">Investimento</label>
+                                    <span asp-validation-for="Investimento" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input asp-for="Responsavel" class="form-control" style="background-color:white" />
+                                    <label for="floatingInput" style="color:grey">Responsável</label>
+                                    <span asp-validation-for="Responsavel" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input asp-for="Interacao" class="form-control" style="background-color:white" />
+                                    <label for="floatingInput" style="color:grey">Interação</label>
+                                    <span asp-validation-for="Interacao" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input asp-for="Leads" class="form-control" style="background-color:white" />
+                                    <label for="floatingInput" style="color:grey">Leads</label>
+                                    <span asp-validation-for="Leads" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input asp-for="Descricao" class="form-control" style="background-color:white" />
+                                    <label for="floatingInput" style="color:grey">Descrição</label>
+                                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-floating mb-3">
+                                    <input asp-for="ClienteCampanha" class="form-control" style="background-color:white" />
+                                    <label for="floatingInput" style="color:grey">Cliente</label>
+                                    <span asp-validation-for="ClienteCampanha" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Criar" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple" />
+                                <a asp-action="Index" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple">Voltar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+    <style>
+        body {
+            /* Safari 4-5, Chrome 1-9 */
+            background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffff66), to(#2F2727));
+            /* Safari 5.1+, Chrome 10+ */
+            background: -webkit-radial-gradient(circle, mediumpurple, white);
+            /* Firefox 3.6+ */
+            background: -moz-radial-gradient(circle, #ffff66, white);
+            /* IE 10 */
+            background: -ms-radial-gradient(circle, #ffff66, white);
+            height: 600px;
+        }
+
+        .centered-form {
+            margin-top: 60px;
+        }
+
+            .centered-form .panel {
+                background: rgba(255, 255, 255, 0.8);
+                box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+            }
+
+       .label-floatlabel {
+            font-weight: bold;
+            color: #46b8da;
+            font-size: 11px;
+        }
+
+        
+
+    </style>

@@ -1,0 +1,199 @@
+﻿@model Clientes.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml";
+}
+
+<h1>Editar - @Model.Nome</h1>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="NomeComercial" class="control-label"></label>
+                <input asp-for="NomeComercial" class="form-control" />
+                <span asp-validation-for="NomeComercial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Morada" class="control-label"></label>
+                <input asp-for="Morada" class="form-control" />
+                <span asp-validation-for="Morada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Localidade" class="control-label"></label>
+                <input asp-for="Localidade" class="form-control" />
+                <span asp-validation-for="Localidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodigoPostal" class="control-label"></label>
+                <input asp-for="CodigoPostal" class="form-control" />
+                <span asp-validation-for="CodigoPostal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Distrito" class="control-label"></label>
+                <input asp-for="Distrito" class="form-control" />
+                <span asp-validation-for="Distrito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Representante" class="control-label"></label>
+                <input asp-for="Representante" class="form-control" />
+                <span asp-validation-for="Representante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telemovel" class="control-label"></label>
+                <input asp-for="Telemovel" class="form-control" />
+                <span asp-validation-for="Telemovel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Website" class="control-label"></label>
+                <input asp-for="Website" class="form-control" />
+                <span asp-validation-for="Website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NIF" class="control-label"></label>
+                <input asp-for="NIF" class="form-control" />
+                <span asp-validation-for="NIF" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ALista" /> @Html.DisplayNameFor(model => model.ALista)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AListaDigital" /> @Html.DisplayNameFor(model => model.AListaDigital)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Rs" /> @Html.DisplayNameFor(model => model.Rs)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Site" /> @Html.DisplayNameFor(model => model.Site)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Fotografia" /> @Html.DisplayNameFor(model => model.Fotografia)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPagamentoId" class="control-label"></label>
+                <select asp-for="CPagamentoId" class="form-control" asp-items="ViewBag.CPagamentoId"></select>
+                <span asp-validation-for="CPagamentoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MPagamentoId" class="control-label"></label>
+                <select asp-for="MPagamentoId" class="form-control" asp-items="ViewBag.MPagamentoId"></select>
+                <span asp-validation-for="MPagamentoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnvioFaturaId" class="control-label"></label>
+                <select asp-for="EnvioFaturaId" class="form-control" asp-items="ViewBag.EnvioFaturaId"></select>
+                <span asp-validation-for="EnvioFaturaId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PagamentosOnline" /> @Html.DisplayNameFor(model => model.PagamentosOnline)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="VivaWallet" /> @Html.DisplayNameFor(model => model.VivaWallet)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ContratoDPD" /> @Html.DisplayNameFor(model => model.ContratoDPD)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tags" class="control-label"></label>
+                <input asp-for="Tags" class="form-control" />
+                <span asp-validation-for="Tags" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataFaturacao" class="control-label"></label>
+                <input asp-for="DataFaturacao" class="form-control" />
+                <span asp-validation-for="DataFaturacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UltimaVisita" class="control-label"></label>
+                <input asp-for="UltimaVisita" class="form-control" />
+                <span asp-validation-for="UltimaVisita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Necessidade" class="control-label"></label>
+                <input asp-for="Necessidade" class="form-control" />
+                <span asp-validation-for="Necessidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataAdesao" class="control-label"></label>
+                <input asp-for="DataAdesao" class="form-control" />
+                <span asp-validation-for="DataAdesao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataFim" class="control-label"></label>
+                <input asp-for="DataFim" class="form-control" />
+                <span asp-validation-for="DataFim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Custo" class="control-label"></label>
+                <input asp-for="Custo" class="form-control" />
+                <span asp-validation-for="Custo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Observacoes" class="control-label"></label>
+                <input asp-for="Observacoes" class="form-control" />
+                <span asp-validation-for="Observacoes" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating">
+
+                <div>
+                    <label asp-for="PdfFile ">Adiconar Pdf:</label>
+                    <input type="file" multiple accept=".pdf, .png,.jpg,.jpeg,image/png,image/jpeg"
+                           asp-for="PdfFile" class="form-control" />
+                    <span asp-validation-for="PdfFile" class="text-danger"></span>
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-sm" style="background-color:royalblue; color:aliceblue" /> 
+                <a asp-action="ListaClientes" class="btn btn-sm" style="background-color:royalblue; color:aliceblue"> Voltar </a>
+
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

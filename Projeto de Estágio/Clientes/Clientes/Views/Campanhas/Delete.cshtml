@@ -1,0 +1,66 @@
+﻿@model Clientes.Models.Campanha
+
+@{
+    ViewData["Title"] = "Eliminar Campanha";
+    Layout = "~/Views/Shared/_LayoutCampanhas.cshtml";
+}
+
+<h1>Eliminar</h1>
+
+<h3>Tem a certeza que quer eliminar esta Campanha?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Plataforma)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Plataforma)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data.Value.Day)/@Html.DisplayFor(model => model.Data.Value.Month)/@Html.DisplayFor(model => model.Data.Value.Year)
+
+
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Investimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Investimento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Interacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Interacao)
+        </dd>
+            <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Responsavel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Responsavel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Leads)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Leads)
+        </dd>
+          <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+    </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CampanhaId" />
+        <input type="submit" value="Eliminar" class="btn btn-sm btn-danger" /> |
+        <a asp-action="Index" class="btn btn-sm" style="margin:3px;  background-color:mediumpurple; color:aliceblue">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+﻿@model PdfFiles
+@{
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml"; ;
+}
+
+<h1>Adicionar Contrato</h1>
+<hr />
+<br />
+
+
+
+<form asp-controller="PdfFiles" asp-action="Index" method = "post" enctype = "multipart/form-data"  >
+    
+
+     <div class="form-group">
+        <h4>Cliente</h4>
+        <select asp-for="ClientePdfID" class="form-control" asp-items="ViewBag.ClienteID"></select>
+     </div>
+    <br />
+    <h4>Contrato</h4>
+
+    <input type="file" name="file"  />
+    <hr />
+    <br />
+    <br />
+    <button type="submit" style="background-color:royalblue; color:aliceblue"> Upload </button>
+    
+    <button asp-action="Details" style="background-color:royalblue; color:aliceblue"> Voltar </button>
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+
+<br /> <br />
+
+@*<embed id = "embPDF" src ="~/pdf/@Model.Name" style="width:100%; height:1200px;"/> 
+*@
+
+

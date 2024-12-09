@@ -1,0 +1,235 @@
+﻿@model Clientes.Models.Cliente
+
+@{
+    ViewData["Title"] = "Adiconar Novo Cliente";
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml";
+}
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script type="text/javascript" src="http://www.clubdesign.at/floatlabels.js"></script>
+
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default" style="block-size:auto; padding-top:0px">
+                <div class="panel-heading" style="background-color:royalblue">
+                    <h1 class="panel-title" style="color:white">Novo Cliente</h1>
+                </div>
+                <div class="panel-body">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <h1 class="pb-2 border-bottom border-primary border-opacity-50" style="color:royalblue">Identidade da Empresa</h1>
+
+                            <div class="form-group">
+                                <label asp-for="Nome" class="control-label"></label>
+                                <input asp-for="Nome" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Nome" class="text-danger"></span>
+                            </div>
+                              <div class="form-group">
+                                <label asp-for="NomeComercial" class="control-label"></label>
+                                <input asp-for="NomeComercial" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="NomeComercial" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Morada" class="control-label"></label>
+                                <input asp-for="Morada" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Morada" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label asp-for="Localidade" class="control-label"></label>
+                                <input asp-for="Localidade" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Localidade" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CodigoPostal" class="control-label"></label>
+                                <input asp-for="CodigoPostal" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="CodigoPostal" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Distrito" class="control-label"></label>
+                                <input asp-for="Distrito" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Distrito" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Representante" class="control-label"></label>
+                                <input asp-for="Representante" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Representante" class="text-danger"></span>
+                            </div>
+                            <h1 class="pb-2 border-bottom border-primary border-opacity-50" style="color:royalblue">Contactos</h1>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Telefone" class="control-label"></label>
+                                <input asp-for="Telefone" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Telefone" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Telemovel" class="control-label"></label>
+                                <input asp-for="Telemovel" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Telemovel" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Website" class="control-label"></label>
+                                <input asp-for="Website" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Website" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="NIF" class="control-label"></label>
+                                <input asp-for="NIF" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="NIF" class="text-danger"></span>
+                            </div>
+                            <h1 class="pb-2 border-bottom border-primary border-opacity-50" style="color:royalblue">Contrato</h1>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="ALista" /> @Html.DisplayNameFor(model => model.ALista)
+                                </label>
+                            </div>
+                               <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="AListaDigital" /> @Html.DisplayNameFor(model => model.AListaDigital)
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="Rs" /> @Html.DisplayNameFor(model => model.Rs)
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="Site" /> @Html.DisplayNameFor(model => model.Site)
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="Fotografia" /> @Html.DisplayNameFor(model => model.Fotografia)
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CPagamentoId" class="control-label"></label>
+                                <select asp-for="CPagamentoId" class="form-control" style="background-color:white" asp-items="ViewBag.CPagamentoId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="MPagamentoId" class="control-label"></label>
+                                <select asp-for="MPagamentoId" class="form-control" style="background-color:white" asp-items="ViewBag.MPagamentoId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="EnvioFaturaId" class="control-label"></label>
+                                <select asp-for="EnvioFaturaId" class="form-control" style="background-color:white" asp-items="ViewBag.EnvioFaturaId"></select>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="PagamentosOnline" /> @Html.DisplayNameFor(model => model.PagamentosOnline)
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="VivaWallet" /> @Html.DisplayNameFor(model => model.VivaWallet)
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="ContratoDPD" /> @Html.DisplayNameFor(model => model.ContratoDPD)
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Tags" class="control-label"></label>
+                                <input asp-for="Tags" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Tags" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DataFaturacao" class="control-label"></label>
+                                <input asp-for="DataFaturacao" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="DataFaturacao" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="UltimaVisita" class="control-label"></label>
+                                <input asp-for="UltimaVisita" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="UltimaVisita" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Necessidade" class="control-label"></label>
+                                <input asp-for="Necessidade" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Necessidade" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DataAdesao" class="control-label"></label>
+                                <input asp-for="DataAdesao" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="DataAdesao" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="DataFim" class="control-label"></label>
+                                <input asp-for="DataFim" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="DataFim" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Custo" class="control-label"></label>
+                                <input asp-for="Custo" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Custo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Observacoes" class="control-label"></label>
+                                <input asp-for="Observacoes" class="form-control" style="background-color:white" />
+                                <span asp-validation-for="Observacoes" class="text-danger"></span>
+                            </div>
+
+
+                       
+
+
+
+                            <div class="form-group">
+                                <input type="submit" value="Criar" class="btn btn-sm" style="background-color:royalblue; color:aliceblue" /> 
+                                <a asp-action="ListaClientes" value="Create" class="btn btn-sm" style="background-color:royalblue; color:aliceblue">Voltar</a>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+    <style>
+        body {
+            /* Safari 4-5, Chrome 1-9 */
+            background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffff66), to(#2F2727));
+            /* Safari 5.1+, Chrome 10+ */
+            background: -webkit-radial-gradient(circle, royalblue, white);
+            /* Firefox 3.6+ */
+            background: -moz-radial-gradient(circle, #ffff66, white);
+            /* IE 10 */
+            background: -ms-radial-gradient(circle, #ffff66, white);
+            height: 600px;
+            width: 100%;
+        }
+
+        .centered-form {
+            margin-top: 60px;
+        }
+
+            .centered-form .panel {
+                background: rgba(255, 255, 255, 0.8);
+                box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+            }
+
+        label.label-floatlabel {
+            font-weight: bold;
+            color: #46b8da;
+            font-size: 11px;
+        }
+    </style>

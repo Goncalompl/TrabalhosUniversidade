@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Clientes.Models.Campanha>
+
+@{
+    ViewData["Title"] = "Lista Campanhas";
+    Layout = "~/Views/Shared/_LayoutCampanhas.cshtml";
+}
+
+<h1>Lista de Campanhas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue">Nova Campanha</a>
+</p>
+@*
+<form method="post">
+    Data
+    <input type="date" id="Data1" name="Data1">
+    <input type="date" id="Data2" name="Data2"</a>
+
+    <input class="btn btn-sm btn-primary my-2 my-sm-0" type="image" src="~/img/search-interface-symbol.png" width="40" height="30" alt="Submit" />
+</form>*@
+
+<form method="post">
+    
+    
+    <input class="card-text" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Plataforma">
+
+
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:mediumpurple; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" asp-route-Datanova="0" />
+
+
+    <a asp-action="Index" asp-route-Datanova="1" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue" height="500" width="500"> TODOS </a>
+    <a asp-action="Index" asp-route-Datanova="0" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue" height="50px" width="50px"> X </a>
+    <a asp-action="ListaCampanhas" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue" height="50px" width="50px"> ⇆ </a>
+</form>
+
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table" style="background-color:mediumpurple; color:aliceblue">
+            <th>
+                <img src="~/img/midia-social.png" width="40" height="20" />Plataforma
+                <a asp-action="Index" asp-route-Plataforma="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Plataforma="2" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/agenda.png" width="40" height="20" />Data
+                <a asp-action="Index" asp-route-Data="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Data="2" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/investimento.png" width="40" height="20" />Investimento
+                <a asp-action="Index" asp-route-Investimento="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Investimento="2" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/click.png" width="40" height="20" />Interação
+                <a asp-action="Index" asp-route-Interacao="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Interacao="2" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/world-wide-web.png" width="40" height="20" />Leads
+                <a asp-action="Index" asp-route-Leads="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Leads="2" class="btn btn-sm" style="background-color:aliceblue; color:mediumpurple"> ↓ </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="table" style="background-color:aliceblue; color:mediumpurple">
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Plataforma)
+            </td>
+            @if(item.Data == null) {
+                @Html.Display("Null");
+            }
+            else{
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data.Value.Day)/@Html.DisplayFor(modelItem => item.Data.Value.Month)/@Html.DisplayFor(modelItem => item.Data.Value.Year)
+                    </td>
+            }
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.Investimento) €
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Interacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Leads)
+            </td>
+             
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.CampanhaId" class="btn btn-sm btn-outline-success"> ✎ </a> |
+                    <a asp-action="Details" asp-route-id="@item.CampanhaId" class="btn btn-sm btn-outline-info"> ... </a> |
+                    <a asp-action="Delete" asp-route-id="@item.CampanhaId" class="btn btn-sm btn-outline-danger"> X </a>
+            </td>
+        </tr>
+}
+    </tbody> 
+</table>
+
+
+<style>
+  
+    form {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+    h1 {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: 'Playfair Display';
+    }
+
+    tr {
+        border: 1px solid;
+        width: 50%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+</style>    

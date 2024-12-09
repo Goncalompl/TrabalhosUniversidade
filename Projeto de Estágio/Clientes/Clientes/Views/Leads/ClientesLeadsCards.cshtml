@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Clientes.Models.Leads>
+
+@{
+    ViewData["Title"] = "Clientes Leads";
+    Layout = "~/Views/Shared/_LayoutLeads.cshtml";
+}
+
+
+<h1 class="pb-2 border-bottom">
+    <span class="badge rounded-pill" style="background-color:mediumseagreen; color:aliceblue">Lista de Clientes</span>
+
+   
+
+</h1>
+
+<a asp-action="ListaClientesLeads" class="btn btn-sm" style="background-color:mediumseagreen; color:aliceblue" height="500" width="500">  ⇆ </a>
+
+
+<form method="post">
+
+    <input class="form-control" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Cliente">
+
+
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:mediumseagreen; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+
+    <a asp-action="ClientesLeadsCards" class="btn btn-sm" style="background-color:mediumseagreen; color:aliceblue" height="50px" width="50px"> TODOS </a>
+
+
+
+</form>
+
+<div class="row align-items-stretch g-3">
+
+ @foreach (var item in Model)
+        {
+        <div class="col-12 col-md-6 col-lg-4 h-100">
+            <div>
+                
+                    <div class="card m-b-30">
+                <div class="card-body row">
+                    <div class="col-6">
+                        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/6009/6009864.png" alt="" class="img-fluid  w-60"></a>
+                    </div>
+                    <div class="col-6 card-title align-self-center mb-0">
+                        <h5>@Html.DisplayFor(modelItem => item.Nome)</h5>
+                                <p class="m-0">@Html.DisplayFor(modelItem => item.SetorAtividade)</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">@Html.DisplayFor(modelItem => item.Email)</a></li>
+                            <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : @Html.DisplayFor(modelItem => item.Telefone)</li>
+                </ul>
+                <div class="card-body">
+                    <div class="float-right btn-group btn-group-sm">
+                            <a asp-controller="Clientes" asp-action="CriarClienteLeads" asp-route-Nome="@item.Nome" asp-route-Email="@item.Email" asp-route-Telefone="@item.Telefone" class="btn btn-sm" style="background-color:mediumseagreen; color:aliceblue">Criar Cliente</a>
+
+
+                    </div>
+                 
+                </div>
+            </div>
+        
+    </div>
+</div>
+}
+</div>
+
+
+<style>
+
+
+.profile
+{
+    font-family: 'Lato', 'sans-serif';
+    }
+.profile 
+{
+
+margin-top: 2px;
+padding:1px;
+    display: inline-block;
+    }
+.divider 
+{
+    border-top:1px solid rgba(0,0,0,0.1);
+    }
+.emphasis 
+{
+    border-top: 1px solid transparent;
+    }
+
+.emphasis h2
+{
+    margin-bottom:0;
+    }
+span.tags 
+{
+    background: #1abc9c;
+    border-radius: 2px;
+    color: #f5f5f5;
+    font-weight: bold;
+    padding: 2px 4px;
+    }
+.profile strong,span,div{
+    text-transform: initial;
+}
+</style>

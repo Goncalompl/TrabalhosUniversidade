@@ -1,0 +1,319 @@
+﻿@model IEnumerable<Clientes.Models.Campanha>
+
+@{
+    ViewData["Title"] = "Lista Campanhas";
+    Layout = "~/Views/Shared/_LayoutCampanhas.cshtml";
+}
+
+<h1 class="pb-2 border-bottom">
+    <span class="badge rounded-pill" style="background-color:mediumpurple; color:aliceblue"> Campanhas </span>
+    <a asp-action="Create" class="btn btn-sm" style="color:mediumpurple"> Nova Campanha </a>
+</h1>
+
+
+
+
+
+<form method="post">
+
+    
+
+    
+    <input class="card-text" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Plataforma">
+
+
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:mediumpurple; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" asp-route-Datanova="0" />
+
+
+    <a asp-action="ListaCampanhas" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue" height="500" width="500"> TODOS </a>
+    <button id="btnGroupDrop1" type="button" class="btn  btn-sm dropdown-toggle show" style="background-color:mediumpurple; color:aliceblue" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+    <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 52px, 0px);background-color:aliceblue; color:mediumpurple" data-popper-placement="bottom-start">
+        <a asp-controller="Campanhas" asp-action="ListaCampanhas" asp-route-Ativa="1" class="btn btn-sm px-4 gap-3" style="margin:3px;  background-color:mediumpurple; color:aliceblue"> Ativas </a>
+        <a asp-controller="Campanhas" asp-action="ListaCampanhas" asp-route-Ativa="2" class="btn btn-sm px-4 gap-3" style="margin:3px;  background-color:mediumpurple; color:aliceblue"> Inativas </a>
+    </div>
+    <a asp-action="Index" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue" height="50px" width="50px"> ⇆ </a>
+    
+</form>
+
+
+@*<div class="container">
+    @foreach (var item in Model) {
+    <div class="row g-3">
+            <div class="col-md-6 ">
+            <div class="well well-sm">
+                <div class="row">
+                    
+                    <div class="col-xs-9 col-md-9 section-box">
+                        <h2>
+                                @Html.DisplayFor(modelItem => item.Plataforma) <a href="http://bootsnipp.com/" target="_blank">
+                                <span class="glyphicon glyphicon-new-window">
+                                </span>
+                            </a>
+                        </h2>
+                        <p>
+                                @Html.DisplayFor(modelItem => item.Descricao)
+                        </p>
+                        <hr />
+                        <div class="row rating-desc">
+                            <div class="col-md-12">
+                                <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                                </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                                    </span><span class="glyphicon glyphicon-heart"></span>Clicks: (@Html.DisplayFor(modelItem => item.Interacao))<span class="separator">|</span>
+                                    <span class="glyphicon glyphicon-comment"></span>(Investimento: @Html.DisplayFor(modelItem => item.Investimento) €)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+       }
+</div>*@
+
+
+<div class="row align-items-stretch g-3">
+    @foreach (var item in Model) {
+        @if(item.Online == true) {
+            <div class="col-12 col-md-6 col-lg-4" @*class="note-has-grid row"*@>
+
+
+
+                <div class="card  order-card m-0 h-100 note-has-grid row" style="background-color:mediumpurple; color:aliceblue">
+
+
+                    <div class="card-block " style=" color:aliceblue">
+
+                        <h3 class="m-b-20">@Html.DisplayFor(modelItem => item.Plataforma) - <img src="~/img/roundGreen.png" width="50" height="30" /></h3>
+
+                        <h6 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>@Html.DisplayFor(modelItem => item.Descricao)</span></h6>
+                        <p class="m-b-0">Clicks<span class="f-right">@Html.DisplayFor(modelItem => item.Interacao)</span></p>
+                        <p class="m-b-0">Responsável<span class="f-right">@Html.DisplayFor(modelItem => item.Responsavel)</span></p>
+                        <p class="m-b-0">Investimento<span class="f-right">@Html.DisplayFor(modelItem => item.Investimento) €</span></p>
+                        <a asp-action="Details" asp-route-id="@item.CampanhaId" class="btn btn-sm btn-info"> Detalhes </a>
+                        <a asp-action="Edit" asp-route-id="@item.CampanhaId" class="btn btn-sm btn-success"> Editar </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+        else {
+            <div class="col-12 col-md-6 col-lg-4" @*class="note-has-grid row"*@>
+
+
+
+                <div class="card  order-card m-0 h-100 note-has-grid row" style="background-color:mediumpurple; color:aliceblue">
+
+
+                    <div class="card-block " style=" color:aliceblue">
+
+                        <h3 class="m-b-20">@Html.DisplayFor(modelItem => item.Plataforma) - <img src="~/img/roundRed.png" width="50" height="30" /></h3>
+
+                        <h6 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>@Html.DisplayFor(modelItem => item.Descricao)</span></h6>
+                        <p class="m-b-0">Clicks<span class="f-right">@Html.DisplayFor(modelItem => item.Interacao)</span></p>
+                        <p class="m-b-0">Responsável<span class="f-right">@Html.DisplayFor(modelItem => item.Responsavel)</span></p>
+                        <p class="m-b-0">Investimento<span class="f-right">@Html.DisplayFor(modelItem => item.Investimento) €</span></p>
+                        <a asp-action="Details" asp-route-id="@item.CampanhaId" class="btn btn-sm btn-info"> Detalhes </a>
+                        <a asp-action="Edit" asp-route-id="@item.CampanhaId" class="btn btn-sm btn-success"> Editar </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+       
+    }
+</div>
+
+
+<style>
+   
+
+ 
+
+
+    .order-card {
+        color: #fff;
+    }
+
+    .bg-c-blue {
+        background: linear-gradient(45deg,#4099ff,#73b4ff);
+    }
+
+    .bg-c-green {
+        background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+    }
+
+    .bg-c-yellow {
+        background: linear-gradient(45deg,#FFB64D,#ffcb80);
+    }
+
+    .bg-c-pink {
+        background: linear-gradient(45deg,#FF5370,#ff869a);
+    }
+
+
+    .card {
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+        box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+        border: none;
+        margin-bottom: 30px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .card .card-block {
+            padding: 25px;
+        }
+
+    .order-card i {
+        font-size: 26px;
+    }
+
+    .f-left {
+        float: left;
+    }
+
+    .f-right {
+        float: right;
+    }
+
+    body {
+        background: #edf1f5;
+        
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid transparent;
+        border-radius: 0;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: 1.57rem;
+    }
+
+    .note-has-grid .nav-link {
+        padding: .5rem
+    }
+
+    .note-has-grid .single-note-item .card {
+        border-radius: 10px
+    }
+
+    .note-has-grid .single-note-item .favourite-note {
+        cursor: pointer
+    }
+
+    .note-has-grid .single-note-item .side-stick {
+        position: absolute;
+        width: 3px;
+        height: 35px;
+        left: 0;
+        background-color: rgba(82, 95, 127, .5)
+    }
+
+    .note-has-grid .single-note-item .category-dropdown.dropdown-toggle:after {
+        display: none
+    }
+
+    .note-has-grid .single-note-item .category [class*=category-] {
+        height: 15px;
+        width: 15px;
+        display: none
+    }
+
+        .note-has-grid .single-note-item .category [class*=category-]::after {
+            content: "\f0d7";
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: 12px;
+            color: #fff;
+            position: absolute
+        }
+
+    .note-has-grid .single-note-item .category .category-business {
+        background-color: rgba(44, 208, 126, .5);
+        border: 2px solid #2cd07e
+    }
+
+    .note-has-grid .single-note-item .category .category-social {
+        background-color: rgba(44, 171, 227, .5);
+        border: 2px solid #2cabe3
+    }
+
+    .note-has-grid .single-note-item .category .category-important {
+        background-color: rgba(255, 80, 80, .5);
+        border: 2px solid #ff5050
+    }
+
+    .note-has-grid .single-note-item.all-category .point {
+        color: rgba(82, 95, 127, .5)
+    }
+
+    .note-has-grid .single-note-item.note-business .point {
+        color: rgba(44, 208, 126, .5)
+    }
+
+    .note-has-grid .single-note-item.note-business .side-stick {
+        background-color: rgba(44, 208, 126, .5)
+    }
+
+    .note-has-grid .single-note-item.note-business .category .category-business {
+        display: inline-block
+    }
+
+    .note-has-grid .single-note-item.note-favourite .favourite-note {
+        color: #ffc107
+    }
+
+    .note-has-grid .single-note-item.note-social .point {
+        color: rgba(44, 171, 227, .5)
+    }
+
+    .note-has-grid .single-note-item.note-social .side-stick {
+        background-color: rgba(44, 171, 227, .5)
+    }
+
+    .note-has-grid .single-note-item.note-social .category .category-social {
+        display: inline-block
+    }
+
+    .note-has-grid .single-note-item.note-important .point {
+        color: rgba(255, 80, 80, .5)
+    }
+
+    .note-has-grid .single-note-item.note-important .side-stick {
+        background-color: rgba(255, 80, 80, .5)
+    }
+
+    .note-has-grid .single-note-item.note-important .category .category-important {
+        display: inline-block
+    }
+
+    .note-has-grid .single-note-item.all-category .more-options,
+    .note-has-grid .single-note-item.all-category.note-favourite .more-options {
+        display: block
+    }
+
+    .note-has-grid .single-note-item.all-category.note-business .more-options,
+    .note-has-grid .single-note-item.all-category.note-favourite.note-business .more-options,
+    .note-has-grid .single-note-item.all-category.note-favourite.note-important .more-options,
+    .note-has-grid .single-note-item.all-category.note-favourite.note-social .more-options,
+    .note-has-grid .single-note-item.all-category.note-important .more-options,
+    .note-has-grid .single-note-item.all-category.note-social .more-options {
+        display: none
+    }
+
+</style>

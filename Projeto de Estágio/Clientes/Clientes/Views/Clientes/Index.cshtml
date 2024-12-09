@@ -1,0 +1,182 @@
+﻿@model IEnumerable<Clientes.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Lista Clientes";
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml";
+}
+
+
+<h1>Lista de Clientes</h1>
+
+
+
+
+<p>
+    <a asp-action="Create" class="btn btn-lg" style="background-color:royalblue; color:aliceblue">Adicionar novo Cliente</a>
+
+</p>
+
+
+
+<form method="post">
+    
+    <input class="card-text" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Nome / Localidade">
+
+
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:royalblue; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+
+    <a > </a>
+
+
+    
+    <input class="card-body" type="text" id="TextoAPesquisarTag" name="TextoAPesquisarTag" placeholder="Tag">
+
+
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:royalblue; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+    
+
+
+    <a asp-action="Index" class="btn btn-sm " style="background-color:royalblue; color:aliceblue" height="500" width="500"> TODOS </a>
+    <a asp-action="ListaClientes" class="btn btn-sm" style="background-color:royalblue; color:aliceblue" height="500" width="500">  ⇆ </a>
+
+    <button id="btnGroupDrop1" type="button" class="btn  btn-sm dropdown-toggle show" style="background-color:royalblue; color:aliceblue" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+    <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" data-popper-placement="bottom-start">
+        <a asp-controller="Clientes" asp-action="Index" asp-route-Lista="1" class="btn btn-sm px-4 gap-3" style="margin:3px;  background-color:royalblue; color:aliceblue"> ALista </a>
+        <div class=""></div>
+        <a asp-controller="Clientes" asp-action="Index" asp-route-Lista="2" class="btn btn-sm px-4 gap-3" style="margin:3px;  background-color:royalblue; color:aliceblue"> AListaDigital </a>
+        <div class=""></div>
+        <a asp-controller="Clientes" asp-action="Index" asp-route-Lista="3" class="btn btn-sm px-4 gap-3" style="margin:3px;  background-color:royalblue; color:aliceblue"> Ambos </a>
+    </div>
+
+  
+    @*<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Dropdown</a>
+        <div class="dropdown-menu " data-bs-popper="static">
+            <a  class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+    </li>*@
+</form>
+
+@*<form method="post">
+    Tag
+    <input class="form-control" type="text" id="TextoAPesquisarTag" name="TextoAPesquisarTag">
+
+
+
+    <input class="btn btn-sm btn-primary my-2 my-sm-0" type="submit" value="Pesquisar" />
+
+
+    <a asp-action="Index" class="btn btn-sm btn-primary " height="50px" width="50px"> TODOS </a>
+
+
+</form>*@
+
+
+
+    
+
+<table class="table table-hover"  style=" width:1410px; height:150px">
+    <thead>
+        <tr class="table" style="background-color:royalblue; color:aliceblue">
+            <th>
+                <img src="~/img/companhia (1).png" width="40" height="20"   />Nome Empresa
+                <a asp-action="Index" asp-route-Nome="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Nome="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+
+                <img src="~/img/carteira-de-identidade.png" width="40" height="20" />Repesentante
+                <a asp-action="Index" asp-route-Servico="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Servico="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+
+                <img src="~/img/local (1).png" width="40" height="20" />Localidade
+                <a asp-action="Index" asp-route-Localizacao="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Localizacao="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+
+                <img src="~/img/store.png" width="40" height="20" />Morada
+                <a asp-action="Index" asp-route-Morada="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Morada="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+
+                <img src="~/img/tag.png" width="40" height="20" />Tags
+                <a asp-action="Index" asp-route-Tags="1" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Tags="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th> </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table" style="align-content:center; width:40 ; height:20 ;background-color:aliceblue; color:royalblue">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Representante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Morada)
+                </td>
+                <td>
+
+                    <span class="badge rounded-pill" style="background-color:royalblue; color:aliceblue">@Html.DisplayFor(modelItem => item.Tags)</span>
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<style>
+
+   form {
+        padding-top: 15px;
+        padding-bottom: 25px;
+
+   }
+
+    h1 {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: 'Playfair Display';
+    }
+
+    tr {
+        border: 1px solid;
+        width: 50%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+       }
+    
+</style>

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ClientesALista</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="shortcut icon" href="~/img/iconSeaGreen.png" type="image/x-icon" />
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:mediumseagreen; color:aliceblue">
+            <div class="container-fluid">
+                <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index"></a>
+                <a href="/Home/Index">
+                    <img src="~/img/Alista_Digital_White_logo.png" alt="" width="200" height="65" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01" padding-left: 500px>
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown" width="200" height="65">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <img src="~/img/cliente (2).png" width="45" height="20" />Clientes</a>
+
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Clientes" asp-action="ListaClientes"> <img src="~/img/reservar-usuario.png" width="45" height="25" />Lista de Clientes</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Clientes" asp-action="ListaContactos"> <img src="~/img/contact-mail.png" width="45" height="25" />Contactos</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Clientes" asp-action="Custos"> <img src="~/img/contract.png" width="45" height="25" />Contratos</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="PdfFiles" asp-action="Details"> <img src="~/img/ficheiro-pdf.png" width="45" height="25" />Lista PDFs</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Clientes" asp-action="Create"> <img src="~/img/page.png" width="45" height="25" />Novo Cliente</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <img src="~/img/agenda (2).png" width="45" height="25" />Agendamentos</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Agendamentos" asp-action="ListaAgendamentos"> <img src="~/img/clipboard.png" width="45" height="25" />Lista de Agendamentos</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Agendamentos" asp-action="Historico"> <img src="~/img/history.png" width="45" height="25" />Histórico</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Agendamentos" asp-action="Create"> <img src="~/img/page.png" width="45" height="25" />Novo Agendamento</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <img src="~/img/checklist.png" width="45" height="25" />Leads</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Leads" asp-action="Index"> <img src="~/img/clipboard.png" width="45" height="25" />Lista das Leads</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Leads" asp-action="LeadsConcluidas"> <img src="~/img/done.png" width="45" height="25" />Leads Concluidas</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Leads" asp-action="ClientesLeadsCards"> <img src="~/img/recruitment.png" width="45" height="25" />Lista de Possiveis Clientes</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Leads" asp-action="Create"> <img src="~/img/page.png" width="45" height="25" />Nova Lead</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <img src="~/img/bullhorn (3).png" width="45" height="25" /> Campanhas</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Campanhas" asp-action="ListaCampanhas"> <img src="~/img/clipboard.png" width="45" height="25" />Lista de Campanhas</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Campanhas" asp-action="Create"> <img src="~/img/page.png" width="45" height="25" />Nova Campanha</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <img src="~/img/notas.png" width="45" height="25" /> Notas</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-area="" asp-controller="Notas" asp-action="Index"> <img src="~/img/notes.png" width="45" height="25" />Lista de Notas</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Notas" asp-action="Create"> <img src="~/img/page.png" width="45" height="25" />Nova Nota</a>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="mb-3">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <div class="position-relative">
+        <footer class="border-top position-relative footer text-muted ">
+            <div class="container">
+                &copy; ||A Lista Digital ||
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+<style>
+    img {
+        /*padding-right: 30px;*/
+
+        padding-right: 20px;
+    }
+
+    li {
+        padding-rigth: 50px;
+        font-size: 20px;
+        width: 200;
+        height: 65;
+    }
+
+    div {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    body {
+        min-height: 80vh;
+    }
+
+    footer {
+        margin-top: ???px;
+    }
+
+    .dropdown-item:active {
+        color: var(--bs-dropdown-link-active-color);
+        text-decoration: none;
+        background-color: mediumseagreen;
+        color: aliceblue;
+        background-image: var(--bs-gradient);
+    }
+</style>

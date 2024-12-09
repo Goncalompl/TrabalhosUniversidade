@@ -1,0 +1,78 @@
+﻿@model Clientes.Models.Campanha
+
+@{
+    ViewData["Title"] = "Editar Campanha";
+    Layout = "~/Views/Shared/_LayoutCampanhas.cshtml";
+}
+
+<h1>Editar Campanha</h1>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CampanhaId" />
+            <div class="form-group">
+                <label asp-for="Plataforma" class="control-label"></label>
+                <input asp-for="Plataforma" class="form-control" />
+                <span asp-validation-for="Plataforma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Investimento" class="control-label"></label>
+                <input asp-for="Investimento" class="form-control" />
+                <span asp-validation-for="Investimento" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="Responsavel" class="control-label"></label>
+                <input asp-for="Responsavel" class="form-control" />
+                <span asp-validation-for="Responsavel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Interacao" class="control-label"></label>
+                <input asp-for="Interacao" class="form-control" />
+                <span asp-validation-for="Interacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads" class="control-label"></label>
+                <input asp-for="Leads" class="form-control" />
+                <span asp-validation-for="Leads" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteCampanha" class="control-label"></label>
+                <input asp-for="ClienteCampanha" class="form-control" />
+                <span asp-validation-for="ClienteCampanha" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Online" /> @Html.DisplayNameFor(model => model.Online)
+                </label>
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue" /> 
+                <a asp-action="Index" class="btn btn-sm" style="background-color:mediumpurple; color:aliceblue">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

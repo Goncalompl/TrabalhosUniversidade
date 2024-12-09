@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Clientes.Models.Cliente>
+@{
+    ViewData["Title"] = "Contactos";
+    Layout = "~/Views/Shared/_LayoutClientes.cshtml";
+}
+
+<h1>Lista de Contactos</h1>
+
+
+<form method="post">
+    
+    <input type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Empresa / Email / Website">
+
+
+
+    <input class="btn btn-sm btn my-2 my-sm-0" style="background-color:royalblue; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+    
+    <input type="text" id="nr" name="nr" placeholder="Nrº Telefone / Telemóvel">
+
+
+
+    <input class="btn btn-sm btn my-2 my-sm-0" style="background-color:royalblue; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+    <button id="btnGroupDrop1" type="button" class="btn  btn-sm dropdown-toggle show" style="background-color:royalblue; color:aliceblue" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+    <div class="dropdown-menu " aria-labelledby="btnGroupDrop1" data-popper-placement="bottom-start">
+        <a asp-controller="Clientes" asp-action="Contactos" asp-route-Lista="1"> ALista </a>
+        <div class=""></div>
+        <a asp-controller="Clientes" asp-action="Contactos" asp-route-Lista="2" style="  background-color:royalblue; color:aliceblue"> AListaDigital </a>
+        <div class=""></div>
+        <a asp-controller="Clientes" asp-action="Contactos" asp-route-Lista="3" style="  background-color:royalblue; color:aliceblue"> Ambos </a>
+    </div>
+
+
+</form>
+
+
+
+
+
+<table class="table table-striped" style=" width:1350px; height:100px">
+    <thead>
+        <tr class="table" style="background-color:royalblue; color:aliceblue">
+            <th>
+                <img src="~/img/companhia.png" width="40" height="20" />Nome da Empresa
+                <a asp-action="Contactos" asp-route-Nome="1" class="btn btn-sm btn" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Contactos" asp-route-Nome="2" class="btn btn-sm btn" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/mail.png" width="40" height="20" />Email
+                <a asp-action="Contactos" asp-route-Email="1" class="btn btn-sm " style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Contactos" asp-route-Email="2" class="btn btn-sm" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/phone-call.png" width="40" height="20" />Telefone
+                <a asp-action="Contactos" asp-route-Telefone="1" class="btn btn-sm btn" style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Contactos" asp-route-Telefone="2" class="btn btn-sm btn" style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/phone-call (1).png" width="40" height="20" />Telemóvel
+                <a asp-action="Contactos" asp-route-Telemovel="1" class="btn btn-sm " style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Contactos" asp-route-Telemovel="2" class="btn btn-sm " style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th>
+                <img src="~/img/world-wide-web.png" width="40" height="20" />Website
+                <a asp-action="Contactos" asp-route-Website="1" class="btn btn-sm " style="background-color:aliceblue; color:royalblue"> ↑ </a>
+
+                <a asp-action="Contactos" asp-route-Website="2" class="btn btn-sm " style="background-color:aliceblue; color:royalblue"> ↓ </a>
+            </th>
+            <th> </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table" style="background-color:aliceblue; color:royalblue">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome) 
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telemovel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Website)
+                </td>
+                <td>
+                    <a asp-action="EditarContactos" asp-route-id="@item.Id" asp-route-Nome="@item.Nome" class="btn btn-sm" style="background-color:royalblue; color:aliceblue"> Editar contacto </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<style>
+
+    form {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+    h1 {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: 'Playfair Display';
+    }
+
+    tr {
+        border: 1px solid;
+        width: 50%;
+        
+    }
+</style>

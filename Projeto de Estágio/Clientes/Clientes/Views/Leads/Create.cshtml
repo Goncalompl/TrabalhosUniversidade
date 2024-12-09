@@ -1,0 +1,143 @@
+﻿@model Clientes.Models.Leads
+
+@{
+    ViewData["Title"] = "Adicionar Lead";
+    Layout = "~/Views/Shared/_LayoutCreateLeads.cshtml";
+}
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script type="text/javascript" src="http://www.clubdesign.at/floatlabels.js"></script>
+
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default" style="block-size:auto; padding-top:0px">
+                <div class="panel-heading" style="background-color:mediumseagreen">
+                    <h1 class="panel-title" style="color:white">Nova Lead</h1>
+                </div>
+                <div class="panel-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <div class="form-floating mb-3">
+                                <input asp-for="Nome" class="form-control" style="background-color:white" />
+                                <label for="floatingInput" style="color:grey">Título</label>
+                                <span asp-validation-for="Nome" class="text-danger"></span>
+                            </div>
+                        </div>
+                      
+                        <div class="form-group">
+                            <label asp-for="Responsavel" class="control-label"></label>
+                            <input asp-for="Responsavel" class="form-control" />
+                            <span asp-validation-for="Responsavel" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PrimeiroContacto" class="control-label"></label>
+                            <input asp-for="PrimeiroContacto" class="form-control" />
+                            <span asp-validation-for="PrimeiroContacto" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DataPrimeiroC" class="control-label"></label>
+                            <input asp-for="DataPrimeiroC" class="form-control" />
+                            <span asp-validation-for="DataPrimeiroC" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="AFazer" class="control-label"></label>
+                            <input asp-for="AFazer" class="form-control" />
+                            <span asp-validation-for="AFazer" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Reuniao" class="control-label"></label>
+                            <input asp-for="Reuniao" class="form-control" />
+                            <span asp-validation-for="Reuniao" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Proposta" class="control-label"></label>
+                            <input asp-for="Proposta" class="form-control" />
+                            <span asp-validation-for="Proposta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Resultados" class="control-label"></label>
+                            <input asp-for="Resultados" class="form-control" />
+                            <span asp-validation-for="Resultados" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Observacoes" class="control-label"></label>
+                            <input asp-for="Observacoes" class="form-control" />
+                            <span asp-validation-for="Observacoes" class="text-danger"></span>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label asp-for="Detalhes" for="exampleTextarea" class="form-label mt-4">Detalhes</label>
+                            <textarea asp-for="Detalhes" class="form-control" id="exampleTextarea" rows="3" style="height: 263px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Telefone" class="control-label"></label>
+                            <input asp-for="Telefone" class="form-control" />
+                            <span asp-validation-for="Telefone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SetorAtividade" class="control-label"></label>
+                            <input asp-for="SetorAtividade" class="form-control" />
+                            <span asp-validation-for="SetorAtividade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="QuenteId" class="control-label"></label>
+                            <select asp-for="QuenteId" class="form-control" asp-items="ViewBag.QuenteId"></select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Criar" class="btn btn-sm" style="background-color:aliceblue; color:mediumseagreen" />
+                            <a asp-action="Index" class="btn btn-sm" style="background-color:aliceblue; color:mediumseagreen">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    body {
+        /* Safari 4-5, Chrome 1-9 */
+        background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffff66), to(#2F2727));
+        /* Safari 5.1+, Chrome 10+ */
+        background: -webkit-radial-gradient(circle, mediumseagreen, white);
+        /* Firefox 3.6+ */
+        background: -moz-radial-gradient(circle, #ffff66, white);
+        /* IE 10 */
+        background: -ms-radial-gradient(circle, #ffff66, white);
+        height: 600px;
+    }
+
+    .centered-form {
+        margin-top: 60px;
+    }
+
+        .centered-form .panel {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+        }
+
+ 
+</style>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

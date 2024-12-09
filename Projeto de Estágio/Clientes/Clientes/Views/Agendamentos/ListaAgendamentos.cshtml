@@ -1,0 +1,428 @@
+﻿@model IEnumerable<Clientes.Models.Agendamento>
+
+@{
+    ViewData["Title"] = "Agendamentos";
+	Layout = "~/Views/Shared/_LayoutAgendamentos.cshtml";
+}
+
+
+
+<h1 class="pb-2 border-bottom">
+    <span class="badge rounded-pill" style="background-color:darkorange; color:aliceblue">Lista de Agendamentos</span>
+
+    <a asp-action="Create" class="btn btn-sm" style="color:darkorange"> Novo Agendamento </a>
+
+</h1>
+
+
+
+<a asp-action="Index" class="btn btn-sm" style="background-color:darkorange; color:aliceblue" height="50px" width="50px"> ⇆ </a>
+
+
+<form method="post">
+    
+    <input class="form-control" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Cliente / Responsável">
+
+
+
+	<input class="btn btn-sm my-2 my-sm-0" style="background-color:darkorange; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+
+  
+
+
+</form>
+
+
+@*<div class="row align-items-stretch g-3">
+	@foreach (var item in Model)
+	{
+		@if (@item.Data < DateTime.Now.AddDays(3) && @item.Data > DateTime.Now)
+		{
+            <div class="col-12 col-md-6 col-lg-4 ">
+
+                <div class="card  order-card m-0 h-100" style="background-color:yellow; color:black">
+                    <div class="card-block" style="background-color:yellow; color:black">
+                        <h3 class="m-b-20">@Html.DisplayFor(modelItem => item.Cliente.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-success"> ✎ </a></h3>
+
+                        @if (item.Data.Month < 10 && item.Data.Day < 10)
+                        {
+                            <p class="m-b-0">Data<span class="f-right"><span>0</span>@Html.DisplayFor(modelItem => item.Data.Day)/<span>0</span>@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+
+                        }
+                        else if ((item.Data.Month >= 10 && item.Data.Day >= 10))
+                        {
+                            <p class="m-b-0">Data<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Day)/@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+                        else if ((item.Data.Month >= 10 && item.Data.Day < 10))
+                        {
+                            <p class="m-b-0">Data<span class="f-right"><span>0</span>@Html.DisplayFor(modelItem => item.Data.Day)/@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+                        else
+                        {
+                            <p class="m-b-0">Data<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Day)/<span>0</span>@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+
+                        @if (item.Data.Minute < 10)
+                        {
+                            <p class="m-b-0">Hora<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Hour):<span>0</span>@Html.DisplayFor(modelItem => item.Data.Minute)</span></p>
+
+                        }
+                        else
+                        {
+                            <p class="m-b-0">Hora<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Hour):@Html.DisplayFor(modelItem => item.Data.Minute)</span></p>
+                        }
+                        
+                        <p class="m-b-0">Tipo de Reunião<span class="f-right">@Html.DisplayFor(modelItem => item.Tipo)</span></p>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+		else if (@item.Estado.EstadoNome == "Remarcar")
+		{
+            <div class="col-12 col-md-6 col-lg-4 ">
+
+                <div class="card  order-card m-0 h-100" style="background-color:red; color:aliceblue">
+                    <div class="card-block" style="background-color:red; color:aliceblue">
+                        <h3 class="m-b-20">@Html.DisplayFor(modelItem => item.Cliente.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-success"> ✎ </a></h3>
+
+                        @if (item.Data.Month < 10 && item.Data.Day < 10)
+                        {
+                            <p class="m-b-0">Data<span class="f-right"><span>0</span>@Html.DisplayFor(modelItem => item.Data.Day)/<span>0</span>@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+
+                        }
+                        else if ((item.Data.Month >= 10 && item.Data.Day >= 10))
+                        {
+                            <p class="m-b-0">Data<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Day)/@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+                        else if ((item.Data.Month >= 10 && item.Data.Day < 10))
+                        {
+                            <p class="m-b-0">Data<span class="f-right"><span>0</span>@Html.DisplayFor(modelItem => item.Data.Day)/@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+                        else 
+                        {
+                            <p class="m-b-0">Data<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Day)/<span>0</span>@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+
+                        @if (item.Data.Minute < 10)
+                        {
+                            <p class="m-b-0">Hora<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Hour):<span>0</span>@Html.DisplayFor(modelItem => item.Data.Minute)</span></p>
+
+                        }
+                        else
+                        {
+                            <p class="m-b-0">Hora<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Hour):@Html.DisplayFor(modelItem => item.Data.Minute)</span></p>
+                        }
+                        <p class="m-b-0">Tipo de Reunião<span class="f-right">@Html.DisplayFor(modelItem => item.Tipo)</span></p>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+		else {
+            <div class="col-12 col-md-6 col-lg-4 ">
+
+                <div class="card  order-card m-0 h-100" style="background-color:aliceblue; color:black">
+                    <div class="card-block" style="background-color:aliceblue; color:black">
+                        <h3 class="m-b-20">@Html.DisplayFor(modelItem => item.Cliente.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-success"> ✎ </a></h3>
+
+                        @if (item.Data.Month < 10 && item.Data.Day <10)
+                        {
+                            <p class="m-b-0">Data<span class="f-right"><span>0</span>@Html.DisplayFor(modelItem => item.Data.Day)/<span>0</span>@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+
+                        }
+                        else if ((item.Data.Month >= 10 && item.Data.Day >= 10))
+                        {
+                            <p class="m-b-0">Data<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Day)/@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+                        else if ((item.Data.Month >= 10 && item.Data.Day < 10))
+                        {
+                            <p class="m-b-0">Data<span class="f-right"><span>0</span>@Html.DisplayFor(modelItem => item.Data.Day)/@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+                          else 
+                        {
+                            <p class="m-b-0">Data<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Day)/<span>0</span>@Html.DisplayFor(modelItem => item.Data.Month)/@Html.DisplayFor(modelItem => item.Data.Year)</span></p>
+                        }
+
+                        @if (item.Data.Minute < 10)
+                        {
+                            <p class="m-b-0">Hora<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Hour):<span>0</span>@Html.DisplayFor(modelItem => item.Data.Minute)</span></p>
+
+                        }
+                        else
+                        {
+                            <p class="m-b-0">Hora<span class="f-right">@Html.DisplayFor(modelItem => item.Data.Hour):@Html.DisplayFor(modelItem => item.Data.Minute)</span></p>
+                        }
+                        <p class="m-b-0">Tipo de Reunião<span class="f-right">@Html.DisplayFor(modelItem => item.Tipo)</span></p>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+		
+	}
+</div>*@
+<div class="row align-items-stretch g-3">
+
+@foreach (var item in Model){
+    @if (@item.Data < DateTime.Now.AddDays(5) && @item.Data > DateTime.Now && @item.LeadID  == null)
+    {
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card radius-10 border-start border-0 border-3 border-warning">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h4 class="my-1 text-warning"> @Html.DisplayFor(modelItem => item.Cliente.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a></h4>
+                                <p class="mb-0 text-secondary">@Html.DisplayFor(modelItem => item.Data)</p>
+                                <p class="mb-0 text-secondary">@Html.DisplayNameFor(modelItem => item.Responsavel) - @Html.DisplayFor(modelItem => item.Responsavel)</p>
+
+                                <p class="mb-0 font-13">@Html.DisplayFor(modelItem => item.Tipo)</p>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a> 
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>  
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                                </td>
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    }
+    else if (@item.Data < DateTime.Now.AddDays(5) && @item.Data > DateTime.Now && @item.LeadID != null)
+        {
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card radius-10 border-start border-0 border-3 border-warning">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h4 class="my-1 text-warning"> @Html.DisplayFor(modelItem => item.Lead.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a></h4>
+                                <p class="mb-0 text-secondary">@Html.DisplayFor(modelItem => item.Data)</p>
+                                <p class="mb-0 text-secondary">@Html.DisplayNameFor(modelItem => item.Responsavel) - @Html.DisplayFor(modelItem => item.Responsavel)</p>
+
+                                <p class="mb-0 font-13">@Html.DisplayFor(modelItem => item.Tipo)</p>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                                </td>
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    else if (@item.Estado.EstadoNome == "Remarcar" && item.LeadID == null)
+    {
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card radius-10 border-start border-0 border-3 border-danger">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h4 class="my-1 text-danger">@Html.DisplayFor(modelItem => item.Cliente.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a></h4>
+                                <p class="mb-0 text-secondary">@Html.DisplayFor(modelItem => item.Data)</p>
+                                <p class="mb-0 text-secondary">@Html.DisplayNameFor(modelItem => item.Responsavel) - @Html.DisplayFor(modelItem => item.Responsavel)</p>
+
+                                <p class="mb-0 font-13">@Html.DisplayFor(modelItem => item.Tipo)</p>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                                </td>
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+    }
+        else if (@item.Estado.EstadoNome == "Remarcar" && item.LeadID != null)
+        {
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card radius-10 border-start border-0 border-3 border-danger">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h4 class="my-1 text-danger">@Html.DisplayFor(modelItem => item.Lead.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a></h4>
+                                <p class="mb-0 text-secondary">@Html.DisplayFor(modelItem => item.Data)</p>
+                                <p class="mb-0 text-secondary">@Html.DisplayNameFor(modelItem => item.Responsavel) - @Html.DisplayFor(modelItem => item.Responsavel)</p>
+
+                                <p class="mb-0 font-13">@Html.DisplayFor(modelItem => item.Tipo)</p>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                                </td>
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+        else if (@item.Estado.EstadoNome == "Pendente" && item.LeadID == null)
+    {
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card radius-10 border-start border-0 border-3 border-info">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h4 class="my-1 text-info">@Html.DisplayFor(modelItem => item.Cliente.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a></h4>
+                                <p class="mb-0 text-secondary">@Html.DisplayFor(modelItem => item.Data)</p>
+                                <p class="mb-0 text-secondary">@Html.DisplayNameFor(modelItem => item.Responsavel) - @Html.DisplayFor(modelItem => item.Responsavel)</p>
+                                <p class="mb-0 font-13">@Html.DisplayFor(modelItem => item.Tipo)</p>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                                </td>
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    }
+        else if (@item.Estado.EstadoNome == "Pendente" && item.LeadID != null)
+        {
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card radius-10 border-start border-0 border-3 border-info">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h4 class="my-1 text-info">@Html.DisplayFor(modelItem => item.Lead.Nome) - @Html.DisplayFor(modelItem => item.Estado.EstadoNome) <a asp-action="EditarEstadoAgendamento" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a></h4>
+                                <p class="mb-0 text-secondary">@Html.DisplayFor(modelItem => item.Data)</p>
+                                <p class="mb-0 text-secondary">@Html.DisplayNameFor(modelItem => item.Responsavel) - @Html.DisplayFor(modelItem => item.Responsavel)</p>
+                                <p class="mb-0 font-13">@Html.DisplayFor(modelItem => item.Tipo)</p>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                                </td>
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+}
+
+</div>
+
+<style>
+.card-product .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center;
+}
+.card-product .img-wrap img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+.card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+.card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.label-rating { margin-right:10px;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.card-product .price-old {
+    color: #999;
+}
+
+    .order-card {
+        color: #fff;
+    }
+
+    .bg-c-blue {
+        background: linear-gradient(45deg,#4099ff,#73b4ff);
+    }
+
+    .bg-c-green {
+        background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+    }
+
+    .bg-c-yellow {
+        background: linear-gradient(45deg,#FFB64D,#ffcb80);
+    }
+
+    .bg-c-pink {
+        background: linear-gradient(45deg,#FF5370,#ff869a);
+    }
+
+
+    .card {
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+        box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+        border: none;
+        margin-bottom: 30px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .card .card-block {
+            padding: 25px;
+        }
+
+    .order-card i {
+        font-size: 26px;
+    }
+
+    .f-left {
+        float: left;
+    }
+
+    .f-right {
+        float: right;
+    }
+</style>    

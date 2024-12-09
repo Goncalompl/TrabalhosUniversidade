@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Clientes.Models.Leads>
+
+@{
+    ViewData["Title"] = "Clientes Leads";
+    Layout = "~/Views/Shared/_LayoutLeads.cshtml";
+}
+
+<h1>Lista de Clientes</h1>
+
+
+<form method="post">
+    
+    <input class="form-control" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Cliente">
+
+   
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:mediumseagreen; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+    <a asp-action="ClientesLeadsCards" class="btn btn-sm" style="background-color:mediumseagreen; color:aliceblue" height="500" width="500">  ⇆ </a>
+
+    <a asp-action="ListaClientesLeads" class="btn btn-sm" style="background-color:mediumseagreen; color:aliceblue" height="50px" width="50px"> TODOS </a>
+   
+
+
+</form>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table" style="background-color:mediumseagreen; color:aliceblue">
+
+            <th scope="row">
+                <img src="~/img/companhia.png" width="40" height="20" />Cliente
+                <a asp-action="ListaClientesLeads" asp-route-Nome="1" class="btn btn-sm" style="background-color:aliceblue; color:mediumseagreen" > ↑ </a>
+
+                <a asp-action="ListaClientesLeads" asp-route-Nome="2" class="btn btn-sm btn-primary" style="background-color:aliceblue; color:mediumseagreen"> ↓ </a>
+
+            </th>
+            <th scope="row">
+
+                <img src="~/img/mail.png" width="40" height="20" />Email
+                <a asp-action="ListaClientesLeads" asp-route-Email="1" class="btn btn-sm btn-primary" style="background-color:aliceblue; color:mediumseagreen"> ↑ </a>
+
+                <a asp-action="ListaClientesLeads" asp-route-Email="2" class="btn btn-sm btn-primary" style="background-color:aliceblue; color:mediumseagreen">  ↓ </a>
+
+            </th>
+            <th scope="row">
+
+                <img src="~/img/phone-call.png" width="40" height="20" />Telefone
+                <a asp-action="ListaClientesLeads" asp-route-Telefone="1" class="btn btn-sm btn-primary" style="background-color:aliceblue; color:mediumseagreen"> ↑ </a>
+
+                <a asp-action="ListaClientesLeads" asp-route-Telefone="2" class="btn btn-sm btn-primary" style="background-color:aliceblue; color:mediumseagreen"> ↓ </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table" style="background-color:aliceblue; color:mediumseagreen">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+
+                    <a asp-controller="Clientes" asp-action="CriarClienteLeads" asp-route-Nome="@item.Nome" asp-route-Email="@item.Email" asp-route-Telefone="@item.Telefone" class="btn btn-sm" style="background-color:mediumseagreen; color:aliceblue">Criar Cliente</a>
+                    </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+
+    form {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+    h1 {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: 'Playfair Display';
+    }
+
+    tr {
+        border: 1px solid;
+        width: 50%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+</style>

@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Clientes.Models.Agendamento>
+
+@{
+    ViewData["Title"] = "Agendamentos";
+    Layout = "~/Views/Shared/_LayoutAgendamentos.cshtml";
+}
+
+<h1>Lista de Agendamentos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-sm" style="background-color:darkorange; color:aliceblue">Adicionar um novo Agendamento</a>
+</p>
+
+<form method="post">
+Data
+<input type="date" id="Data1" name="Data1">
+<input type="date" id="Data2" name="Data2">
+    
+    <input asp-route-datanova="0" asp-route-pesquisadata="1" class="btn btn-sm my-2 my-sm-0" style="background-color:darkorange; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+</form>
+
+<form method="post">
+    
+    <input class="form-control" type="text" id="TextoAPesquisar" name="TextoAPesquisar" placeholder="Cliente">
+
+   
+
+    <input class="btn btn-sm my-2 my-sm-0" style="background-color:darkorange; color:aliceblue" type="image" src="~/img/lupa.png" width="40" height="30" alt="Submit" />
+
+
+    <a asp-action="Index" asp-route-Datanova="1" class="btn btn-sm" style="background-color:darkorange; color:aliceblue" height="50px" width="50px"> TODOS </a>
+   
+    <a asp-action="ListaAgendamentos" class="btn btn-sm" style="background-color:darkorange; color:aliceblue" height="50px" width="50px"> ⇆ </a>
+
+
+</form>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table" style="background-color:Darkorange; color:aliceblue">
+
+            <th scope="row">
+                <img src="~/img/id-card.png" width="40" height="20" />Cliente
+                <a asp-action="Index" asp-route-Nome="1" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Nome="2" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↓ </a>
+
+            </th>
+            <th scope="row">
+
+                <img src="~/img/agenda.png" width="40" height="20" />Data
+                <a asp-action="Index" asp-route-Data="1" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Data="2" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↓ </a>
+
+            </th>
+            <th scope="row">
+
+                Responsável
+                <a asp-action="Index" asp-route-Responsavel="1" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Responsavel="2" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↓ </a>
+
+            </th>
+            <th scope="row">
+
+                <img src="~/img/clipboard (1).png" width="40" height="20" />Estado
+                <a asp-action="Index" asp-route-Estado="1" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Estado="2" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↓ </a>
+            </th>
+            <th scope="row">
+
+                <img src="~/img/question-mark.png" width="40" height="20" />Tipo
+                <a asp-action="Index" asp-route-Tipo="1" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↑ </a>
+
+                <a asp-action="Index" asp-route-Tipo="2" class="btn btn-sm" style="background-color:aliceblue; color:darkorange"> ↓ </a>
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table" style="background-color:aliceblue; color:darkorange">
+                @if(item.LeadID == null) {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                    </td>
+                } else {   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lead.Nome)
+                    </td>
+                }
+                
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Responsavel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado.EstadoNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-success"> ✎ </a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info"> ... </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger"> X </a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+
+    form {
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+    h1 {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: 'Playfair Display';
+    }
+
+    tr {
+        border: 1px solid;
+        width: 50%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+</style>
